@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Letter to Maria</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class = "background"><css-doodle><style>
+  --color: #51eaea, #fffde1, #ff9d76, #FB3569;
+
+  @grid: 30x1 / 100vw 100vh / #270f34; 
+  
+  :container {
+    perspective: 30vmin;
+    --deg: @p(-180deg, 180deg);
+  }
+  
+  :after, :before {
+    content: '';
+    background: @p(--color); 
+    @place: @r(100%) @r(100%);
+    @size: @r(6px);
+    @shape: heart;
+  }
+
+  @place: center;
+  @size: 18vmin; 
+
+  box-shadow: @m2(0 0 50px @p(--color));
+  background: @m100(
+    radial-gradient(@p(--color) 50%, transparent 0) 
+    @r(-20%, 120%) @r(-20%, 100%) / 1px 1px
+    no-repeat
+  );
+
+  will-change: transform, opacity;
+  animation: scale-up 12s linear infinite;
+  animation-delay: calc(-12s / @I * @i);
+
+  @keyframes scale-up {
+    0%, 95.01%, 100% {
+      transform: translateZ(0) rotate(0);
+      opacity: 0;
+    }
+    10% { 
+      opacity: 1; 
+    }
+    95% {
+      transform: 
+        translateZ(35vmin) rotateZ(var(--deg));
+    }
+  }
+</style></css-doodle></div>
+<audio id="nsync-audio" src="IWantYouBack.mp3"></audio>
+<div class="flip-card letter1">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="heart.png" alt="Heart" style="width: 80%; height: 80%; padding-top: 15%;">
+      </div>
+      <div class="flip-card-back">
+        <img src="tesla.jpg" alt="Tesla Together" style="width: 100%; height: 100%; border-radius: 20px;">
+        <div class = "poem">
+            I've caused your heart to ache,
+            But Maria, please believe me, my love was never fake.
+            The nights feel so much colder without you by my side,
+            I long to make amends, to turn the changing tide.</div>
+      </div>
+    </div>
+  </div>
+  <div class="flip-card letter2">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="heart.png" alt="Heart" style="width: 80%; height: 80%; padding-top: 15%;">
+      </div>
+      <div class="flip-card-back">
+        <img src="legoland.JPG" alt="Lego Land" style="width: 100%; height: 100%; border-radius: 20px;">
+        <div class = "poem">Maria, you're the angel who brightens up my days,
+            Your love, a guiding beacon, through life's uncertain maze.
+            If I could turn back time, erase the hurt and pain,
+            I'd do it in an instant, to see you smile again.</div>
+      </div>
+    </div>
+  </div>
+  <div class="flip-card letter3">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="heart.png" alt="Heart" style="width: 80%; height: 80%; padding-top: 15%; border-radius: 20px;">
+      </div>
+      <div class="flip-card-back">
+        <img src="trolls.jpg" alt="Trolls" style="width: 100%; height: 100%; border-radius: 20px;">
+        <div class = "poem">Together we can rise above, stronger than before,
+            For love that's truly meant to be will always find its shore.
+            Maria, you're my everything, the dream I can't let go,
+            With you, my heart is whole again, this love I hope you'll know.</div>
+      </div>
+    </div>
+  </div>
+    <script src="index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/css-doodle/0.39.1/css-doodle.min.js"></script>
+</body>
+</html>

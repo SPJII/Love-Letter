@@ -1,0 +1,143 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Arial', sans-serif;
+    background: transparent;
+  }
+
+  .background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  .heart {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    background: pink;
+    transform: translate(-50%, -50%) rotate(45deg);
+    animation: pulsate 1.5s infinite;
+    z-index: -2;
+  }
+
+  .heart::before, .heart::after {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: pink;
+    border-radius: 50%;
+  }
+
+  .heart::before {
+    top: -100px;
+    left: 0;
+  }
+
+  .heart::after {
+    top: 0;
+    left: -100px;
+  }
+
+  @keyframes pulsate {
+    0% {
+      transform: translate(-50%, -50%) rotate(45deg) scale(1);
+    }
+    50% {
+      transform: translate(-50%, -50%) rotate(45deg) scale(1.1);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(45deg) scale(1);
+    }
+  }
+
+  .flip-card {
+    background-color: transparent;
+    width: 170px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    font-family: 'Arial', sans-serif;
+    border-radius: 20px;
+    margin: 10px;
+    perspective: 1000px;
+    z-index: 2;
+    transition: z-index 0.3s;
+    animation: pulsate-pink 2s infinite;
+  }
+
+  .flip-card:hover {
+    z-index: 10;
+  }
+
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    border-radius: 20px;
+    background-color: transparent;
+  }
+
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg) scale(2, 2);
+  }
+
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 20px;
+  }
+
+  .flip-card-front {
+    background-color: rgb(253, 159, 203);
+    color: black;
+  }
+
+  .flip-card-back {
+    background-color: dodgerblue;
+    color: white;
+    transform: rotateY(180deg);
+  }
+
+  .poem {
+    font-size: 0.7em;
+    font-weight: bold;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.425);
+    height: 75%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 20px;
+  }
+
+  @keyframes pulsate-pink {
+    0% {
+      box-shadow: 0 0 5px rgba(255, 105, 180, 0.5);
+    }
+    50% {
+      box-shadow: 0 0 25px rgba(255, 105, 180, 1);
+    }
+    100% {
+      box-shadow: 0 0 5px rgba(255, 105, 180, 0.5);
+    }
+  }
